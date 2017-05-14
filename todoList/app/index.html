@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.4/angular-material.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>To-Do List</title>
+  </head>
+  <body ng-app="app" ng-cloak ng-controller="AppCtrl as app" layout="column" layout-fill>
+    <div ui-view="header"></div>
+    <!-- to logged in users only -->
+    <md-content ng-if="app.user" flex>
+      <div flex ui-view="contents"></div>
+    </md-content>
+    <!-- to NOT logged in users -->
+    <div ng-if="!app.user">
+      <md-card flex md-whiteframe="2" layout-margin style="padding: 8px;">
+        <p>Para continuar, faça <a href="/login">login</a>.</p>
+        <md-divider></md-divider>
+        </div>
+      </md-card>
+    </div>
+      <!-- Angular Material requires Angular.js Libraries -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <!-- Angular Material Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.4/angular-material.min.js"></script>
+    <!-- Ui-router -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.0/angular-ui-router.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script> 
+    <!-- application -->
+    <script src="usuario.js"></script>
+    <script src="app.js"></script>
+    <script src="userservice.js"></script>
+    <script src="tarefas.js"></script>
+  </body>
+</html>

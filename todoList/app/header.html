@@ -1,0 +1,47 @@
+<md-toolbar md-colors="{background: 'blue-800'}" layout-wrap layout-align="center" layout="row">
+  <div class="md-toolbar-tools" flex="100" flex-lg=80 flex-xl="80">
+    <h2 flex ui-sref="app.home" style="cursor: pointer;">To-Do List de Tarefas</h2>
+    <md-menu>
+      <md-button ng-click="$mdMenu.open($event)" class="md-fab md-primary md-hue-3" aria-label="User menu">
+        <md-icon md-font-icon="md" aria-label="">person</md-icon>
+      </md-button>
+      <md-menu-content>
+        <md-menu-item ng-if="app.user"><p>{{app.user.email}}<br></p>
+        </md-menu-item>
+        <md-divider ng-if="app.user"></md-divider>
+        <md-menu-item ng-if="!app.user">
+          <md-button ng-href="/login">
+            <md-icon md-font-icon="md" aria-label="">account_circle</md-icon>
+            Login
+          </md-button>
+        </md-menu-item>
+        <md-divider ng-if="app.user"></md-divider>
+        <md-menu-item ng-if="app.user">
+          <md-button ng-click="null"  ui-sref="app.home">
+            <md-icon md-font-icon="md" aria-label="">collections</md-icon>
+            Tarefas
+          </md-button>
+        </md-menu-item>
+        <md-menu-item ng-if="app.user">
+          <md-button ng-click="null"  ui-sref="app.cadtarefas">
+            <md-icon md-font-icon="md" aria-label="">note_add</md-icon>
+            Nova Tarefa
+          </md-button>
+        </md-menu-item>
+        <md-menu-item ng-if="app.user">
+          <md-button ng-click="null" href="/logout">
+            <md-icon md-font-icon="md" aria-label="">power_settings_new</md-icon>
+            Logout
+          </md-button>
+        </md-menu-item>
+        <md-divider></md-divider>
+        <md-menu-item ng-if="app.user">
+          <md-button ng-click="null" ui-sref="app.about">
+            <md-icon md-font-icon="md" aria-label="">info</md-icon>
+            About
+          </md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+  </div>
+</md-toolbar>
