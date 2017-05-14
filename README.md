@@ -1,4 +1,4 @@
-##Sobre
+#Sobre#
 
 To-Do List de Tarefas é um experimento para o aprenizado de AngularJS e Google AppEngine. Tais ferramentas serão utilizadas no desenvolvimento do Projeto e-CIIS. O e-CIIS é um PD&I (Projeto de Desenvolvimento e Inovação) que será realizado em cooperação com a Organização Pan-Americana da Saúde no Laboratório de Práticas de Software (SPLab). O objetivo do projeto é o desenvolver uma rede social para integração das entidades que compõem o Complexo Industrial de Saúde(CIS) do país, para troca de informações de forma clara, ágil e confiável. O projeto é coordenado pelos professores Jorge Figueiredo e Dalton Serey e sob a gerência de André Abrantes e Mayza Nunes.
 
