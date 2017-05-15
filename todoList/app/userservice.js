@@ -4,12 +4,13 @@
     app.service('UserService', function UserService($http, $q) {
         var service = this;
         var _user;
+
         Object.defineProperties(service, {
             user: {
                 get: function () { return _user; },
                 set: function (data) { _user = data; }
             }
-        })
+        });
 
         service.load = function() {
             $http.get('/api')
@@ -26,7 +27,7 @@
             }, function (err) {
                 // err
             });
-        }
+        };
 
         service.save = function(status) {
             _user._state = 'saving';
@@ -42,7 +43,7 @@
                 _user._state = 'changed';
             })
             return promise;
-        }
+        };
         // service initialization
         service.load(); 
     });

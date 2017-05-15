@@ -19,7 +19,7 @@ class Usuario(ndb.Model):
 
 	def get_tarefas(self):
 		tarefas = []
-		
+
 		if len(self.keys_tarefas) > 0:
 			for tarefa in self.keys_tarefas:
 				tarefa = Tarefa.get_by_id(tarefa)
@@ -30,12 +30,6 @@ class Usuario(ndb.Model):
 				})
 
 		return tarefas
-			
-	@staticmethod
-	def get_by_email(email):
-		query = Usuario.query(Usuario.emails == email.lower())
-		usuario = query.get()
-		return usuario
 
 class Tarefa(ndb.Model):
 	nome = ndb.StringProperty()

@@ -9,6 +9,7 @@
   </head>
   <body ng-app="app" ng-cloak ng-controller="AppCtrl as app" layout="column" layout-fill>
     <div ui-view="header"></div>
+    <div ui-view="about"></div> 
     <!-- to logged in users only -->
     <md-content ng-if="app.user" flex>
       <div flex ui-view="contents"></div>
@@ -18,14 +19,13 @@
       <md-card flex md-whiteframe="2" layout-margin style="padding: 8px;">
         <p>Para continuar, faça <a href="/login">login</a>.</p>
         <md-divider></md-divider>
-        </div>
       </md-card>
     </div>
       <!-- Angular Material requires Angular.js Libraries -->
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
     <!-- Angular Material Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.4/angular-material.min.js"></script>
     <!-- Ui-router -->

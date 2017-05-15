@@ -3,11 +3,11 @@
   <div layout="row" layout-align="start" flex>
     <md-input-container flex="50">
       <label>Tarefa</label>
-      <input type="text" name="quest" ng-model="vm.tarefa.nome"/>
+      <input md-maxlength="50" maxlength="50" type="text" name="quest" ng-model="vm.tarefa.nome"/>
     </md-input-container>
     <md-input-container flex="50">
       <label>Descricao</label>
-      <input type="text" name="quest" ng-model="vm.tarefa.descricao"/>
+      <input md-maxlength="300" maxlength="300" type="text" name="quest" ng-model="vm.tarefa.descricao"/>
     </md-input-container>
   </div>
   <div layout-gt-xs="row">

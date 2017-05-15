@@ -1,15 +1,12 @@
 <md-content flex md-whiteframe="4" layout-margin style="padding: 4px;">
   <h1>Tarefas</h1>
   <md-list>
-    <md-list-item class="md-2-line secondary-button-padding" ng-repeat="tarefa in vm.user.tarefas" ng-click="vm.set_something()">
-      <div class="md-list-item-text" layout="column">
-        <h3>Tarefa: {{tarefa.nome}}</h3>
-        <h4>Descrição: {{tarefa.descricao}}</h4>
-        <h4>Prazo: {{tarefa.prazo | date}}</h4>
+    <md-list-item class="md-2-line md-long-text" ng-repeat="tarefa in vm.user.tarefas" ng-click="vm.del_tarefa($index, $event)">
+      <div class="md-list-item-text">
+        <h3><b>Tarefa:</b> {{tarefa.nome}}</h3>
+        <p><b>Descrição:</b> {{tarefa.descricao}}</p>
+        <p><b>Prazo:</b> {{tarefa.prazo | date}}</p>
       </div>
-      <md-button class="md-secondary" ng-click="vm.del_tarefa($index, $event)">
-        <md-icon>delete</md-icon>
-      </md-button>
     </md-list-item>
   </md-list>
 </md-content>

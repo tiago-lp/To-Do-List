@@ -1,6 +1,5 @@
 import json
 import webapp2
-import md5
 
 def date_handler(obj):
     if hasattr(obj, 'isoformat'):

@@ -1,5 +1,4 @@
 "use strict";
-var vm;
 (function() {
   var app = angular.module('app', ['ngMaterial', 'ui.router']);
   
@@ -16,20 +15,20 @@ var vm;
             }
         }
     })
+    .state('app.about', {
+        'url': '/about',
+        'views': {
+            'about@': {
+                templateUrl: 'about.html'
+            },
+        }
+    })
     .state('app.home', {
         'url': '/',
         'views': {
             'contents@': {
                 templateUrl: 'home.html',
                 controller: 'TarefasCtrl as vm'
-            },
-        }
-    })
-    .state('app.about', {
-        'url': '/about',
-        'views': {
-            'contents@': {
-                templateUrl: 'about.html'
             },
         }
     })
@@ -45,7 +44,7 @@ var vm;
   });
 
   app.controller('AppCtrl', function AppCtrl(UserService) {
-        vm = this;
+        var vm = this;
         vm.save_user = UserService.save;
         Object.defineProperties(vm, {
             user: {
