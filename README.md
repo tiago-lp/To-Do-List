@@ -4,4 +4,4 @@ To-Do List de Tarefas é um experimento para o aprenizado de AngularJS e Google 
 
 Esta ferramenta tem como principal objetivo armazenar tarefas que o usuário pretende realizar, determinando um nome, uma descrição e um prazo para cumpri-la. O login do usuário é autenticado automáticamente pela Google, basta o usuário ter uma conta Google para usar a ferramenta.
 
-Para acessar [clique aqui](lucky-science-165614.appspot.com)
+Para acessar [clique aqui]:lucky-science-165614.appspot.com
