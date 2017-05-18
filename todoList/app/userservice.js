@@ -29,14 +29,13 @@
             });
         };
 
-        service.save = function(status) {
+        service.save = function(operation) {
             _user._state = 'saving';
-            _user.operation = status;
-            var promise = $http({
-                method: 'PUT',
-                url: '/api/usuario/' + _user.email,
-                data: JSON.stringify(_user)
-            }).then(function (response) {
+            _user.operation = operation;
+            var promise = $http.put(
+                '/api/usuario/' + _user.email, JSON.stringify(_user)
+            ).then(function (response) {
+                _user.tarefas = response.data.tarefas;
                 _user._state = 'saved';
             }, function (err) {
                 alert('Não foi possível salvar os dados!');

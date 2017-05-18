@@ -1,7 +1,7 @@
 <md-content flex md-whiteframe="4" layout-margin style="padding: 4px;">
   <h1>Tarefas</h1>
   <md-list>
-    <md-list-item class="md-2-line md-long-text" ng-repeat="tarefa in vm.user.tarefas" ng-click="vm.del_tarefa($index, $event)">
+    <md-list-item class="md-2-line md-long-text" ng-repeat="tarefa in vm.user.tarefas | orderBy:'prazo'" ng-click="vm.del_tarefa(tarefa, $event)">
       <div class="md-list-item-text">
         <h3><b>Tarefa:</b> {{tarefa.nome}}</h3>
         <p><b>Descrição:</b> {{tarefa.descricao}}</p>

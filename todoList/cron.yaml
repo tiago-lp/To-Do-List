@@ -1,0 +1,5 @@
+cron:
+- description: "alert user deadlines"
+  url: /api/deadline
+  schedule: every day 00:00
+  timezone: Brazil/East

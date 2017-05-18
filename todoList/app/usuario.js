@@ -4,8 +4,10 @@ function Usuario(data) {
     _.extend(this, data)
 };
 
-Usuario.prototype.del_tarefa = function(index) {
-    this.tarefas.splice(index, 1);
+Usuario.prototype.del_tarefa = function(tarefa) {
+	_.remove(this.tarefas, function(tarefa) {
+		return tarefa['id'] == tarefa['id']
+	});
 };
 
 Usuario.prototype.add_tarefa = function(tarefa) {

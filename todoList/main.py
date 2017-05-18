@@ -44,12 +44,8 @@ class MainHandler(BaseHandler):
         usuario = Usuario.get_or_insert(user.email(), id=user.email())
         tarefas = usuario.get_tarefas()
         usuario.put()
-        user_data = {
-            "email": user.email(),
-            "usuario": usuario.to_dict(),
-            "tarefas": tarefas,
-            "logout_url": "http://%s/logout" % self.request.host
-        }
+        user_data = usuario.get_data()
+        user_data["logout_url"] = "http://%s/logout" % self.request.host
         self.response.headers['Content-Type'] = 'application/json; charset=utf-8'
         self.response.write(data2json(user_data).encode('utf-8'))
 
@@ -58,12 +54,24 @@ class UsuarioHandler(BaseHandler):
         usuario = Usuario.get_by_id(email)
         _assert(usuario, 400, "usuario not found")
         data = json.loads(self.request.body)
-        usuario.update(data)
-        usuario.put()
+        tarefas_update = usuario.update(data)
+        self.response.headers['Content-Type'] = 'application/json; charset=utf-8'
+        self.response.write(data2json(tarefas_update).encode('utf-8')) 
+
+class DeadlineHandler(BaseHandler):
+    def get(self):
+        tarefas = Tarefa.query()
+        for tarefa in tarefas:
+            tarefa.verify_deadline()
+
+        usuarios = Usuario.query()
+        for usuario in usuarios:
+            usuario.send_email()
 
 app = webapp2.WSGIApplication([
     ('/login', LoginHandler),
     ('/logout', LogoutHandler),
     ('/api', MainHandler),
     ('/api/usuario/(.*)', UsuarioHandler),
+    ('/api/deadline', DeadlineHandler),
 ], debug=True)
